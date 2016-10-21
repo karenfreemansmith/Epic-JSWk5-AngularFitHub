@@ -1,0 +1,21 @@
+$offwhite: #f9f4ea;
+$bronze: #8e7245;
+$orange: #e2a43f;
+$dance: 'Dancing Script', cursive;
+$smpic: 128px;
+$lgfont: 5em;
+
+body {
+  background: $offwhite;
+}
+
+h1 {
+  color: $bronze;
+  font-size: $lgfont;
+  font-family: $dance;
+  text-align: center;
+}
+
+img.logo {
+  width: $smpic;
+}

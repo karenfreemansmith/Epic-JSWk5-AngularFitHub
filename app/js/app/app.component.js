@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.parentMealList = [];
@@ -20,14 +20,14 @@ var AppComponent = (function () {
     AppComponent.prototype.showDetails = function (clickedMeal) {
         this.selectedMeal = clickedMeal;
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <show-meal\n        [childMealList] = \"parentMealList\"\n        (clickedMeal) = \"showDetails($event)\"\n      ></show-meal>\n      <add-meal\n        [childSelectedMeal] = \"selectedMeal\"\n        (newMealSender) = \"addMeal($event)\"\n      ></add-meal>\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <show-meal\n        [childMealList] = \"parentMealList\"\n        (clickedMeal) = \"showDetails($event)\"\n      ></show-meal>\n      <add-meal\n        [childSelectedMeal] = \"selectedMeal\"\n        (newMealSender) = \"addMeal($event)\"\n      ></add-meal>\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
