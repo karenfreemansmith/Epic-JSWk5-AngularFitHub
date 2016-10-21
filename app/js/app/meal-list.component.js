@@ -29,7 +29,7 @@ __decorate([
 ShowMealComponent = __decorate([
     core_1.Component({
         selector: "show-meal",
-        template: "\n  <div *ngFor=\"let currentMeal of childMealList \" >\n      <h4>{{ currentMeal.food }} ({{ currentMeal.calories }}) @ {{ currentMeal.datetime }}</h4>\n      <p>Protein: {{ currentMeal.protein }}</p>\n      <p>Carbohydrates: {{ currentMeal.carbs }}</p>\n      <p>Fat: {{ currentMeal.fat }}</p>\n      <p>{{ currentMeal.comments }}</p>\n  </div>\n  "
+        template: "\n  <div *ngFor=\"let currentMeal of childMealList \" >\n      <h4>{{ currentMeal.food }} ({{ currentMeal.calories }}) {{ currentMeal.datetime | date:'longDate' }} @ {{ currentMeal.datetime | date:'shortTime' }}</h4>\n      <p>Protein: {{ currentMeal.protein }}</p>\n      <p>Carbohydrates: {{ currentMeal.carbs }}</p>\n      <p>Fat: {{ currentMeal.fat }}</p>\n      <p>{{ currentMeal.comments }}</p>\n  </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], ShowMealComponent);

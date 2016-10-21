@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: "show-meal",
   template:`
   <div *ngFor="let currentMeal of childMealList " >
-      <h4>{{ currentMeal.food }} ({{ currentMeal.calories }}) @ {{ currentMeal.datetime }}</h4>
+      <h4>{{ currentMeal.food }} ({{ currentMeal.calories }}) {{ currentMeal.datetime | date:'longDate' }} @ {{ currentMeal.datetime | date:'shortTime' }}</h4>
       <p>Protein: {{ currentMeal.protein }}</p>
       <p>Carbohydrates: {{ currentMeal.carbs }}</p>
       <p>Fat: {{ currentMeal.fat }}</p>
