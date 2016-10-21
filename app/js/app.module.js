@@ -15,6 +15,7 @@ var app_component_1 = require('./app.component');
 var food_add_component_1 = require('./food-add.component');
 var food_edit_component_1 = require('./food-edit.component');
 var food_list_component_1 = require('./food-list.component');
+var badfood_pipe_1 = require('./badfood.pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,6 +30,7 @@ var AppModule = (function () {
                 food_add_component_1.AddFoodComponent,
                 food_edit_component_1.EditFoodComponent,
                 food_list_component_1.ShowFoodComponent,
+                badfood_pipe_1.BadFoodPipe
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
