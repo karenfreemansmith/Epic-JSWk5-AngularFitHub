@@ -1,12 +1,11 @@
 "use strict";
 var Food = (function () {
-    function Food(food, calories, protein, carbs, fat, comments) {
+    function Food(food, calories, protein, fat, carbs) {
         this.food = food;
         this.calories = calories;
         this.protein = protein;
-        this.carbs = carbs;
         this.fat = fat;
-        this.comments = comments;
+        this.carbs = carbs;
         this.datetime = new Date();
     }
     Food.prototype.calculatedCalories = function () {

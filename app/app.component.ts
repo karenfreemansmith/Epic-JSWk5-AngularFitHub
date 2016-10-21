@@ -7,13 +7,13 @@ import { Food } from './food.model';
     <div class="container">
       <h1><img src="build/images/logo.png" class="logo">Epic Health Tracker</h1>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <show-food
             [childFoodList] = "parentFoodList"
             (clickedFood) = "showFood($event)"
           ></show-food>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4 col-sm-offset-1">
           <add-food
             [childSelectedFood] = "selectedFood"
             (addFoodSender) = "addFood($event)"

@@ -3,9 +3,8 @@ export class Food {
   constructor(public food: string,
               public calories: number,
               public protein: number,
-              public carbs: number,
               public fat: number,
-              public comments: string) { }
+              public carbs: number) { }
 
   calculatedCalories() {
     return this.protein*4 + this.carbs*4 + this.fat*9;

@@ -28,7 +28,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n        <div class=\"col-sm-6\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showFood($event)\"\n          ></show-food>\n        </div>\n        <div class=\"col-sm-6\">\n          <add-food\n            [childSelectedFood] = \"selectedFood\"\n            (addFoodSender) = \"addFood($event)\"\n          ></add-food>\n          <edit-food\n            [childSelectedFood] = \"selectedFood\"\n            (editFoodSender)=\"editDone()\"\n          ></edit-food>\n        </div>\n      </div>\n    </div>\n  "
+        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n        <div class=\"col-sm-7\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showFood($event)\"\n          ></show-food>\n        </div>\n        <div class=\"col-sm-4 col-sm-offset-1\">\n          <add-food\n            [childSelectedFood] = \"selectedFood\"\n            (addFoodSender) = \"addFood($event)\"\n          ></add-food>\n          <edit-food\n            [childSelectedFood] = \"selectedFood\"\n            (editFoodSender)=\"editDone()\"\n          ></edit-food>\n        </div>\n      </div>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

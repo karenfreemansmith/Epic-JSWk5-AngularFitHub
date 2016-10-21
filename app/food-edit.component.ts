@@ -7,28 +7,24 @@ import { Food } from './food.model';
   <div *ngIf="childSelectedFood" class="row">
     <h3>Edit {{childSelectedFood.food}}:</h3>
     <div class="form-group col-xs-9">
-      <label>Enter Food: </label>
+      <label>Enter Food Description: </label>
       <input [(ngModel)]="childSelectedFood.food" class="form-control">
     </div>
     <div class="form-group col-xs-3">
-      <label>Enter Calories: </label>
+      <label>Calories: </label>
       <input [(ngModel)]="childSelectedFood.calories" class="form-control" type="number" min=0 max=5000>
     </div>
     <div class="form-group col-xs-4">
-      <label>Enter Protein (in grams): </label>
+      <label>Protein<br>(in grams): </label>
       <input [(ngModel)]="childSelectedFood.protein" class="form-control" type="number" min=0>
     </div>
     <div class="form-group col-xs-4">
-      <label>Enter Carbs (in grams): </label>
+      <label>Carbs<br>(in grams): </label>
       <input [(ngModel)]="childSelectedFood.carbs" class="form-control" type="number" min=0>
     </div>
     <div class="form-group col-xs-4">
-      <label>Enter Fat (in grams): </label>
+      <label>Fat<br>(in grams): </label>
       <input [(ngModel)]="childSelectedFood.fat" class="form-control" type="number" min=0>
-    </div>
-    <div class="form-group col-xs-12">
-      <label>Enter Comments: </label>
-      <input [(ngModel)]="childSelectedFood.comments" class="form-control">
     </div>
     <div class="form-group col-xs-12">
     <button (click)="updateClicked()" class="btn form-control">Done Editing</button>
