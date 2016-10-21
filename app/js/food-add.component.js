@@ -12,12 +12,12 @@ var core_1 = require('@angular/core');
 var food_model_1 = require('./food.model');
 var AddFoodComponent = (function () {
     function AddFoodComponent() {
-        this.newFoodSender = new core_1.EventEmitter();
+        this.addFoodSender = new core_1.EventEmitter();
     }
     AddFoodComponent.prototype.addClicked = function (food, calories, protein, carbs, fat, comment) {
         if ((food !== '') && (calories > 0)) {
             var newFoodToAdd = new food_model_1.Food(food, calories, protein, carbs, fat, comment);
-            this.newFoodSender.emit(newFoodToAdd);
+            this.addFoodSender.emit(newFoodToAdd);
         }
         else {
             alert("Please enter at least the food name and calories!");
@@ -30,7 +30,7 @@ var AddFoodComponent = (function () {
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], AddFoodComponent.prototype, "newFoodSender", void 0);
+    ], AddFoodComponent.prototype, "addFoodSender", void 0);
     AddFoodComponent = __decorate([
         core_1.Component({
             selector: "add-food",

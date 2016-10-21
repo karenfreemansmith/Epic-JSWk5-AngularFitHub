@@ -29,7 +29,7 @@ __decorate([
 ShowFoodComponent = __decorate([
     core_1.Component({
         selector: "show-food",
-        template: "\n  <div *ngFor=\"let currentFood of childFoodList \" >\n      <h4>{{ currentFood.food }} ({{ currentFood.calories }} calories) {{ currentFood.datetime | date:'longDate' }} @ {{ currentFood.datetime | date:'shortTime' }}</h4>\n      <p>Protein: {{ currentFood.protein }}, Carbohydrates: {{ currentFood.carbs }}, Fat: {{ currentFood.fat }}</p>\n      <p><strong>Comments: </strong> {{ currentFood.comments }}</p>\n  </div>\n  "
+        template: "\n  <div *ngFor=\"let currentFood of childFoodList \" >\n    <h4 (click)=\"selectFood(currentFood)\" >\n      {{ currentFood.food }}\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      ({{ currentFood.calories }} calories)</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      ({{ currentFood.calories }} calories)</span>\n      {{ currentFood.datetime | date:'longDate' }}\n      @ {{ currentFood.datetime | date:'shortTime' }}\n    </h4>\n    <p>\n      Protein: {{ currentFood.protein }}g,\n      Carbohydrates: {{ currentFood.carbs }}g,\n      Fat: {{ currentFood.fat }}g\n\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n    </p>\n    <p><strong>Comments: </strong> {{ currentFood.comments }}</p>\n  </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], ShowFoodComponent);

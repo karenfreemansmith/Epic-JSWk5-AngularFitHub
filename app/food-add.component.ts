@@ -47,11 +47,11 @@ import { Food } from './food.model';
 
 export class AddFoodComponent {
   @Input() childSelectedFood: Food;
-  @Output() newFoodSender = new EventEmitter();
+  @Output() addFoodSender = new EventEmitter();
   addClicked(food: string, calories: number, protein: number, carbs: number, fat: number, comment: string ){
     if((food!=='')&&(calories>0)) {
       var newFoodToAdd: Food = new Food(food, calories, protein, carbs, fat, comment);
-      this.newFoodSender.emit(newFoodToAdd);
+      this.addFoodSender.emit(newFoodToAdd);
     } else {
       alert("Please enter at least the food name and calories!");
     }

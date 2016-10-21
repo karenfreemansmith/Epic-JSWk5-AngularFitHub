@@ -5,9 +5,26 @@ import { Food } from './food.model';
   selector: "show-food",
   template:`
   <div *ngFor="let currentFood of childFoodList " >
-      <h4>{{ currentFood.food }} ({{ currentFood.calories }} calories) {{ currentFood.datetime | date:'longDate' }} @ {{ currentFood.datetime | date:'shortTime' }}</h4>
-      <p>Protein: {{ currentFood.protein }}, Carbohydrates: {{ currentFood.carbs }}, Fat: {{ currentFood.fat }}</p>
-      <p><strong>Comments: </strong> {{ currentFood.comments }}</p>
+    <h4 (click)="selectFood(currentFood)" >
+      {{ currentFood.food }}
+      <span *ngIf="currentFood.problemData()" class="warning">
+      ({{ currentFood.calories }} calories)</span>
+      <span *ngIf="!currentFood.problemData()">
+      ({{ currentFood.calories }} calories)</span>
+      {{ currentFood.datetime | date:'longDate' }}
+      @ {{ currentFood.datetime | date:'shortTime' }}
+    </h4>
+    <p>
+      Protein: {{ currentFood.protein }}g,
+      Carbohydrates: {{ currentFood.carbs }}g,
+      Fat: {{ currentFood.fat }}g
+
+      <span *ngIf="currentFood.problemData()" class="warning">
+      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>
+      <span *ngIf="!currentFood.problemData()">
+      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>
+    </p>
+    <p><strong>Comments: </strong> {{ currentFood.comments }}</p>
   </div>
   `
 })

@@ -17,15 +17,18 @@ var AppComponent = (function () {
     AppComponent.prototype.addFood = function (newFoodFromChild) {
         this.parentFoodList.push(newFoodFromChild);
     };
-    AppComponent.prototype.showDetails = function (clickedFood) {
+    AppComponent.prototype.showFood = function (clickedFood) {
         this.selectedFood = clickedFood;
+    };
+    AppComponent.prototype.editDone = function () {
+        this.selectedFood = null;
     };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n      <div class=\"col-sm-6\">\n        <add-food\n          [childSelectedFood] = \"selectedFood\"\n          (newFoodSender) = \"addFood($event)\"\n        ></add-food>\n      </div>\n      <div class=\"col-sm-6\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showDetails($event)\"\n          ></show-food>\n        </div>\n      </div>\n    </div>\n  "
+        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n      <div class=\"col-sm-6\">\n        <add-food\n          [childSelectedFood] = \"selectedFood\"\n          (addFoodSender) = \"addFood($event)\"\n        ></add-food>\n        <edit-food\n          [childSelectedFood] = \"selectedFood\"\n          (editFoodSender)=\"editDone()\"\n        ></edit-food>\n      </div>\n      <div class=\"col-sm-6\">\n        <show-food\n          [childFoodList] = \"parentFoodList\"\n          (clickedFood) = \"showFood($event)\"\n        ></show-food>\n        </div>\n      </div>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

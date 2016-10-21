@@ -10,14 +10,18 @@ import { Food } from './food.model';
       <div class="col-sm-6">
         <add-food
           [childSelectedFood] = "selectedFood"
-          (newFoodSender) = "addFood($event)"
+          (addFoodSender) = "addFood($event)"
         ></add-food>
+        <edit-food
+          [childSelectedFood] = "selectedFood"
+          (editFoodSender)="editDone()"
+        ></edit-food>
       </div>
       <div class="col-sm-6">
-          <show-food
-            [childFoodList] = "parentFoodList"
-            (clickedFood) = "showDetails($event)"
-          ></show-food>
+        <show-food
+          [childFoodList] = "parentFoodList"
+          (clickedFood) = "showFood($event)"
+        ></show-food>
         </div>
       </div>
     </div>
@@ -30,8 +34,11 @@ export class AppComponent {
     this.parentFoodList.push(newFoodFromChild);
   }
   selectedFood: Food = null;
-  showDetails(clickedFood) {
+  showFood(clickedFood) {
     this.selectedFood = clickedFood;
+  }
+  editDone() {
+    this.selectedFood = null;
   }
 
 }
