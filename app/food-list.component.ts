@@ -54,7 +54,7 @@ export class ShowFoodComponent {
     this.clickedFood.emit(foodToEdit);
   }
   getFood() {
-    this.childFoodList.push(new Food("XL Hershey's Symphony Bar", 600, 9, 30, 63));
+    this.childFoodList.push(new Food("XL Hershey's Symphony Bar", 600, 9, 30, 69));
     this.childFoodList.push(new Food("100% NATURAL CEREAL 1 OZ", 135,	3,	6,	18));
     this.childFoodList.push(new Food("1000 ISLAND; SALAD DRSNG;LOCAL1 TBSP", 25,	0,	2,	2));
     this.childFoodList.push(new Food("1000 ISLAND; SALAD DRSNG;REGLR1 TBSP", 60,	0,	6,	2));

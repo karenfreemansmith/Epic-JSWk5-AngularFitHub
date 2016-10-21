@@ -4,8 +4,24 @@ import { Meal } from './meal.model';
 @Component ({
   selector: "edit-meal",
   template:`
-    <div>Edit Meal</div>
+  <div *ngIf="childSelectedMeal" class="row">
+    <h3>Edit {{childSelectedMeal.description}} from {{childSelectedMeal.datetime | date}}:</h3>
+    <div class="form-group col-xs-12">
+      <label>Meal Description: </label>
+      <input [(ngModel)]="childSelectedMeal.description" class="form-control">
+    </div>
+
+    <div class="form-group col-xs-12">
+    <button (click)="updateClicked()" class="btn form-control">Done Editing</button>
+    </div>
+  </div>
   `
 })
 
-export class EditMealComponent {}
+export class EditMealComponent {
+  @Input() childSelectedMeal: Meal;
+  @Output() editMealSender = new EventEmitter();
+  updateClicked() {
+    this.editMealSender.emit();
+  }
+}

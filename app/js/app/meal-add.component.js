@@ -9,15 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var meal_model_1 = require("./meal.model");
 var AddMealComponent = (function () {
     function AddMealComponent() {
+        this.addMealSender = new core_1.EventEmitter();
     }
+    AddMealComponent.prototype.addClicked = function (meal) {
+        if ((meal !== '')) {
+            var newMealToAdd = new meal_model_1.Meal(meal);
+            this.addMealSender.emit(newMealToAdd);
+        }
+        else {
+            alert("Please enter a description of your meal (breakfast/lunch/dinner...)!");
+        }
+    };
     return AddMealComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", meal_model_1.Meal)
+], AddMealComponent.prototype, "childSelectedMeal", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], AddMealComponent.prototype, "addMealSender", void 0);
 AddMealComponent = __decorate([
     core_1.Component({
         selector: "add-meal",
-        template: "\n    <div>Add Meal</div>\n  "
+        template: "\n  <div *ngIf=\"childSelectedMeal===null\" class=\"row\">\n    <h3>Add Meal:</h3>\n    <div class=\"form-group col-xs-12\">\n      <label>Enter Meal Description: </label>\n      <input #newMeal class=\"form-control\">\n    </div>\n    <div class=\"form-group col-xs-12\">\n    <button (click)=\"addClicked(newMeal.value)\" class=\"btn form-control\">Add Meal</button>\n    </div>\n  </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], AddMealComponent);
