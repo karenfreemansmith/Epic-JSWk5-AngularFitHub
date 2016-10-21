@@ -1,4 +1,4 @@
-export class Meal {
+export class Food {
   public datetime: Date = new Date();
   constructor(public food: string,
               public calories: number,

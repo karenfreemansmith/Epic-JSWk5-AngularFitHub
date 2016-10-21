@@ -9,29 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ShowMealComponent = (function () {
-    function ShowMealComponent() {
-        this.clickedMeal = new core_1.EventEmitter();
+var ShowFoodComponent = (function () {
+    function ShowFoodComponent() {
+        this.clickedFood = new core_1.EventEmitter();
     }
-    ShowMealComponent.prototype.selectMeal = function (mealToEdit) {
-        this.clickedMeal.emit(mealToEdit);
+    ShowFoodComponent.prototype.selectFood = function (foodToEdit) {
+        this.clickedFood.emit(foodToEdit);
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
-    ], ShowMealComponent.prototype, "childMealList", void 0);
+    ], ShowFoodComponent.prototype, "childFoodList", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], ShowMealComponent.prototype, "clickedMeal", void 0);
-    ShowMealComponent = __decorate([
+    ], ShowFoodComponent.prototype, "clickedFood", void 0);
+    ShowFoodComponent = __decorate([
         core_1.Component({
-            selector: "show-meal",
-            template: "\n  <div *ngFor=\"let currentMeal of childMealList \" >\n      <h4>{{ currentMeal.food }} ({{ currentMeal.calories }}) {{ currentMeal.datetime | date:'longDate' }} @ {{ currentMeal.datetime | date:'shortTime' }}</h4>\n      <p>Protein: {{ currentMeal.protein }}</p>\n      <p>Carbohydrates: {{ currentMeal.carbs }}</p>\n      <p>Fat: {{ currentMeal.fat }}</p>\n      <p>{{ currentMeal.comments }}</p>\n  </div>\n  "
+            selector: "show-food",
+            template: "\n  <div *ngFor=\"let currentFood of childFoodList \" >\n      <h4>{{ currentFood.food }} ({{ currentFood.calories }} calories) {{ currentFood.datetime | date:'longDate' }} @ {{ currentFood.datetime | date:'shortTime' }}</h4>\n      <p>Protein: {{ currentFood.protein }}, Carbohydrates: {{ currentFood.carbs }}, Fat: {{ currentFood.fat }}</p>\n      <p><strong>Comments: </strong> {{ currentFood.comments }}</p>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], ShowMealComponent);
-    return ShowMealComponent;
+    ], ShowFoodComponent);
+    return ShowFoodComponent;
 }());
-exports.ShowMealComponent = ShowMealComponent;
-//# sourceMappingURL=meal-list.component.js.map
+exports.ShowFoodComponent = ShowFoodComponent;
+//# sourceMappingURL=food-list.component.js.map

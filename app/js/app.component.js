@@ -11,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.parentMealList = [];
-        this.selectedMeal = null;
+        this.parentFoodList = [];
+        this.selectedFood = null;
     }
-    AppComponent.prototype.addMeal = function (newMealFromChild) {
-        this.parentMealList.push(newMealFromChild);
+    AppComponent.prototype.addFood = function (newFoodFromChild) {
+        this.parentFoodList.push(newFoodFromChild);
     };
-    AppComponent.prototype.showDetails = function (clickedMeal) {
-        this.selectedMeal = clickedMeal;
+    AppComponent.prototype.showDetails = function (clickedFood) {
+        this.selectedFood = clickedFood;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <show-meal\n        [childMealList] = \"parentMealList\"\n        (clickedMeal) = \"showDetails($event)\"\n      ></show-meal>\n      <add-meal\n        [childSelectedMeal] = \"selectedMeal\"\n        (newMealSender) = \"addMeal($event)\"\n      ></add-meal>\n    </div>\n  "
+            template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n      <div class=\"col-sm-6\">\n        <add-food\n          [childSelectedFood] = \"selectedFood\"\n          (newFoodSender) = \"addFood($event)\"\n        ></add-food>\n      </div>\n      <div class=\"col-sm-6\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showDetails($event)\"\n          ></show-food>\n        </div>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -1,6 +1,6 @@
 "use strict";
-var Meal = (function () {
-    function Meal(food, calories, protein, carbs, fat, comments) {
+var Food = (function () {
+    function Food(food, calories, protein, carbs, fat, comments) {
         this.food = food;
         this.calories = calories;
         this.protein = protein;
@@ -9,7 +9,7 @@ var Meal = (function () {
         this.comments = comments;
         this.datetime = new Date();
     }
-    return Meal;
+    return Food;
 }());
-exports.Meal = Meal;
-//# sourceMappingURL=meal.model.js.map
+exports.Food = Food;
+//# sourceMappingURL=food.model.js.map

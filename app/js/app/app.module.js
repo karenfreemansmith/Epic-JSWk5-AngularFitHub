@@ -12,8 +12,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
-var meal_add_component_1 = require("./meal-add.component");
-var meal_list_component_1 = require("./meal-list.component");
+var food_add_component_1 = require("./food-add.component");
+var food_list_component_1 = require("./food-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,8 +27,8 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            meal_add_component_1.AddMealComponent,
-            meal_list_component_1.ShowMealComponent,
+            food_add_component_1.AddFoodComponent,
+            food_list_component_1.ShowFoodComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     }),
