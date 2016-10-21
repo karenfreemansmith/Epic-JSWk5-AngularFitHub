@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ShowMealComponent = (function () {
-    function ShowMealComponent() {
+var EditMealComponent = (function () {
+    function EditMealComponent() {
     }
-    return ShowMealComponent;
+    return EditMealComponent;
 }());
-ShowMealComponent = __decorate([
+EditMealComponent = __decorate([
     core_1.Component({
-        selector: "show-meals",
-        template: "\n    <div>Show Meals</div>\n  "
+        selector: "edit-meal",
+        template: "\n    <div>Edit Meal</div>\n  "
     }),
     __metadata("design:paramtypes", [])
-], ShowMealComponent);
-exports.ShowMealComponent = ShowMealComponent;
-//# sourceMappingURL=meal-list.component.js.map
+], EditMealComponent);
+exports.EditMealComponent = EditMealComponent;
+//# sourceMappingURL=meal-edit.component.js.map

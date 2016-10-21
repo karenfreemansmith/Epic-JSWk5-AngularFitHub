@@ -8,18 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var ShowMealComponent = (function () {
-    function ShowMealComponent() {
+var core_1 = require('@angular/core');
+var AddMealComponent = (function () {
+    function AddMealComponent() {
     }
-    return ShowMealComponent;
+    AddMealComponent = __decorate([
+        core_1.Component({
+            selector: "add-meal",
+            template: "\n    <div>Add Meal</div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AddMealComponent);
+    return AddMealComponent;
 }());
-ShowMealComponent = __decorate([
-    core_1.Component({
-        selector: "show-meals",
-        template: "\n    <div>Show Meals</div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], ShowMealComponent);
-exports.ShowMealComponent = ShowMealComponent;
-//# sourceMappingURL=meal-list.component.js.map
+exports.AddMealComponent = AddMealComponent;
+//# sourceMappingURL=meal-add.component.js.map

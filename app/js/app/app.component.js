@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
         this.parentFoodList = [];
+        this.selectedView = "meals";
         this.selectedFood = null;
     }
     AppComponent.prototype.addFood = function (newFoodFromChild) {
@@ -23,12 +24,21 @@ var AppComponent = (function () {
     AppComponent.prototype.editDone = function () {
         this.selectedFood = null;
     };
+    AppComponent.prototype.activityView = function () {
+        this.selectedView = "activity";
+    };
+    AppComponent.prototype.foodView = function () {
+        this.selectedView = "food";
+    };
+    AppComponent.prototype.mealView = function () {
+        this.selectedView = "meals";
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n        <div class=\"col-sm-7\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showFood($event)\"\n          ></show-food>\n        </div>\n        <div class=\"col-sm-4 col-sm-offset-1\">\n          <add-food\n            [childSelectedFood] = \"selectedFood\"\n            (addFoodSender) = \"addFood($event)\"\n          ></add-food>\n          <edit-food\n            [childSelectedFood] = \"selectedFood\"\n            (editFoodSender)=\"editDone()\"\n          ></edit-food>\n        </div>\n      </div>\n    </div>\n  "
+        template: "\n    <div class=\"container\">\n      <h1><img src=\"build/images/logo.png\" class=\"logo\">Epic Health Tracker</h1>\n      <div class=\"row\">\n        <div class=\"col-xs-4\">\n          <button (click)=\"activityView()\" class=\"btn form-control\">Activity</button>\n        </div>\n        <div class=\"col-xs-4\">\n          <button (click)=\"foodView()\" class=\"btn form-control\">Food</button>\n        </div>\n        <div class=\"col-xs-4\">\n          <button (click)=\"mealView()\" class=\"btn form-control\">Meals</button>\n        </div>\n      </div>\n      <div *ngIf=\"this.selectedView==='activity'\" class=\"row\">\n        <div class=\"col-sm-7\">\n          <show-activity></show-activity>\n        </div>\n        <div class=\"col-sm-4 col-sm-offset-1\">\n          <add-activity></add-activity>\n          <edit-activity></edit-activity>\n        </div>\n      </div>\n      <div *ngIf=\"this.selectedView==='food'\" class=\"row\">\n        <div class=\"col-sm-7\">\n          <show-food\n            [childFoodList] = \"parentFoodList\"\n            (clickedFood) = \"showFood($event)\"\n          ></show-food>\n        </div>\n        <div class=\"col-sm-4 col-sm-offset-1\">\n          <add-food\n            [childSelectedFood] = \"selectedFood\"\n            (addFoodSender) = \"addFood($event)\"\n          ></add-food>\n          <edit-food\n            [childSelectedFood] = \"selectedFood\"\n            (editFoodSender)=\"editDone()\"\n          ></edit-food>\n        </div>\n      </div>\n      <div *ngIf=\"this.selectedView==='meals'\" class=\"row\">\n        <div class=\"col-sm-7\">\n          <show-meals></show-meals>\n        </div>\n        <div class=\"col-sm-4 col-sm-offset-1\">\n          <add-meal></add-meal>\n          <edit-meal></edit-meal>\n        </div>\n      </div>\n    </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

@@ -6,7 +6,6 @@ var Food = (function () {
         this.protein = protein;
         this.fat = fat;
         this.carbs = carbs;
-        this.datetime = new Date();
     }
     Food.prototype.calculatedCalories = function () {
         return this.protein * 4 + this.carbs * 4 + this.fat * 9;

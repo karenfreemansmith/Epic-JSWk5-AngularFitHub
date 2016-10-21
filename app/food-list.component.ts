@@ -15,7 +15,7 @@ import { Food } from './food.model';
       </select>
     </div>
     <div *ngIf="childFoodList.length<=0" class="col-xs-3"><button (click)="getFood()" class="btn form-control">Get Food</button></div>
-
+    <div *ngIf="!childFoodList.length<=0" class="col-xs-3"><button (click)="saveFood()" class="btn form-control">Save Food</button></div>
   </div>
   <div *ngFor="let currentFood of childFoodList | badfood: badFoodSelection " >
     <h4 (click)="selectFood(currentFood)" >

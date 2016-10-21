@@ -15,6 +15,12 @@ var app_component_1 = require('./app.component');
 var food_add_component_1 = require('./food-add.component');
 var food_edit_component_1 = require('./food-edit.component');
 var food_list_component_1 = require('./food-list.component');
+var meal_add_component_1 = require('./meal-add.component');
+var meal_edit_component_1 = require('./meal-edit.component');
+var meal_list_component_1 = require('./meal-list.component');
+var activity_add_component_1 = require('./activity-add.component');
+var activity_edit_component_1 = require('./activity-edit.component');
+var activity_list_component_1 = require('./activity-list.component');
 var badfood_pipe_1 = require('./badfood.pipe');
 var AppModule = (function () {
     function AppModule() {
@@ -30,6 +36,12 @@ var AppModule = (function () {
                 food_add_component_1.AddFoodComponent,
                 food_edit_component_1.EditFoodComponent,
                 food_list_component_1.ShowFoodComponent,
+                meal_add_component_1.AddMealComponent,
+                meal_edit_component_1.EditMealComponent,
+                meal_list_component_1.ShowMealComponent,
+                activity_add_component_1.AddActivityComponent,
+                activity_edit_component_1.EditActivityComponent,
+                activity_list_component_1.ShowActivityComponent,
                 badfood_pipe_1.BadFoodPipe
             ],
             bootstrap: [app_component_1.AppComponent]
