@@ -11,7 +11,10 @@ import { Meal } from './meal.model';
       <label>Meal Description: </label>
       <input [(ngModel)]="childSelectedMeal.description" class="form-control">
     </div>
-
+    <div class="form-group col-xs-12">
+      <label>Meal Date/Time: </label>
+      <input [(ngModel)]="childSelectedMeal.datetime" class="form-control">
+    </div>
     <div class="form-group col-xs-12">
     <button (click)="updateClicked()" class="btn form-control">Done Editing</button>
     </div>

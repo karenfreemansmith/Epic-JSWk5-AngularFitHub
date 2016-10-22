@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var food_model_1 = require("./food.model");
+var core_1 = require('@angular/core');
+var food_model_1 = require('./food.model');
 var AddFoodComponent = (function () {
     function AddFoodComponent() {
         this.addFoodSender = new core_1.EventEmitter();
@@ -23,22 +23,22 @@ var AddFoodComponent = (function () {
             alert("Please enter at least the food name and calories!");
         }
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', food_model_1.Food)
+    ], AddFoodComponent.prototype, "childSelectedFood", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], AddFoodComponent.prototype, "addFoodSender", void 0);
+    AddFoodComponent = __decorate([
+        core_1.Component({
+            selector: "add-food",
+            template: "\n  <div *ngIf=\"childSelectedFood===null\" class=\"row\">\n    <h3>Add Food:</h3>\n    <div class=\"form-group col-xs-9\">\n      <label>Enter Food Description: </label>\n      <input #newFood class=\"form-control\">\n    </div>\n    <div class=\"form-group col-xs-3\">\n      <label>Calories: </label>\n      <input #newCalories class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Protein<br>(in grams): </label>\n      <input #newProtein class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Carbs<br>(in grams): </label>\n      <input #newCarbs class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Fat<br>(in grams): </label>\n      <input #newFat class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-12\">\n    <button (click)=\"\n      addClicked(newFood.value, newCalories.value, newProtein.value, newFat.value, newCarbs.value);\n      newFood.value='';\n      newCalories.value=0;\n      newProtein.value=0;\n      newCarbs.value=0;\n      newFat.value=0;\n    \" class=\"btn form-control\">Add Food</button>\n    </div>\n  </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], AddFoodComponent);
     return AddFoodComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", food_model_1.Food)
-], AddFoodComponent.prototype, "childSelectedFood", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], AddFoodComponent.prototype, "addFoodSender", void 0);
-AddFoodComponent = __decorate([
-    core_1.Component({
-        selector: "add-food",
-        template: "\n  <div *ngIf=\"childSelectedFood===null\" class=\"row\">\n    <h3>Add Food:</h3>\n    <div class=\"form-group col-xs-9\">\n      <label>Enter Food Description: </label>\n      <input #newFood class=\"form-control\">\n    </div>\n    <div class=\"form-group col-xs-3\">\n      <label>Calories: </label>\n      <input #newCalories class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Protein<br>(in grams): </label>\n      <input #newProtein class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Carbs<br>(in grams): </label>\n      <input #newCarbs class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-4\">\n      <label>Fat<br>(in grams): </label>\n      <input #newFat class=\"form-control\" type=\"number\">\n    </div>\n    <div class=\"form-group col-xs-12\">\n    <button (click)=\"\n      addClicked(newFood.value, newCalories.value, newProtein.value, newFat.value, newCarbs.value);\n      newFood.value='';\n      newCalories.value=0;\n      newProtein.value=0;\n      newCarbs.value=0;\n      newFat.value=0;\n    \" class=\"btn form-control\">Add Food</button>\n    </div>\n  </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], AddFoodComponent);
 exports.AddFoodComponent = AddFoodComponent;
 //# sourceMappingURL=food-add.component.js.map

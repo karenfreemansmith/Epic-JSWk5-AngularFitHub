@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var food_model_1 = require("./food.model");
+var core_1 = require('@angular/core');
+var food_model_1 = require('./food.model');
 var ShowFoodComponent = (function () {
     function ShowFoodComponent() {
         this.clickedFood = new core_1.EventEmitter();
@@ -988,22 +988,22 @@ var ShowFoodComponent = (function () {
         */
         this.childFoodList.push(new food_model_1.Food("ZUCHINI; 1/2 CUP", 16, 1, 0, 3));
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], ShowFoodComponent.prototype, "childFoodList", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ShowFoodComponent.prototype, "clickedFood", void 0);
+    ShowFoodComponent = __decorate([
+        core_1.Component({
+            selector: "show-food",
+            template: "\n  <div class=\"row\">\n    <div class=\"col-xs-6\">\n      <select (change)=\"onChange($event.target.value)\" class=\"form-control\">\n        <option value = \"All\" selected=\"selected\">Show All Food</option>\n        <option value = \"high calorie\">High Calorie Foods</option>\n        <option value = \"high fat\">High Fat Foods</option>\n        <option value = \"high carbs\">High Carb Foods</option>\n        <option value = \"low protein\">Low Protein Foods</option>\n      </select>\n    </div>\n    <div *ngIf=\"childFoodList.length<=0\" class=\"col-xs-3\"><button (click)=\"getFood()\" class=\"btn form-control\">Get Food</button></div>\n    <div *ngIf=\"!childFoodList.length<=0\" class=\"col-xs-3\"><button (click)=\"saveFood()\" class=\"btn form-control\">Save Food</button></div>\n  </div>\n  <div *ngFor=\"let currentFood of childFoodList | badfood: badFoodSelection \" >\n    <h4 (click)=\"selectFood(currentFood)\" >\n      {{ currentFood.food }}\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      ({{ currentFood.calories }} calories)</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      ({{ currentFood.calories }} calories)</span>\n      {{ currentFood.datetime | date:'longDate' }}\n      @ {{ currentFood.datetime | date:'shortTime' }}\n    </h4>\n    <p>\n      Protein: {{ currentFood.protein }}g,\n      Carbohydrates: {{ currentFood.carbs }}g,\n      Fat: {{ currentFood.fat }}g\n\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n    </p>\n    <p><strong>Comments: </strong> {{ currentFood.comments }}</p>\n  </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ShowFoodComponent);
     return ShowFoodComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], ShowFoodComponent.prototype, "childFoodList", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], ShowFoodComponent.prototype, "clickedFood", void 0);
-ShowFoodComponent = __decorate([
-    core_1.Component({
-        selector: "show-food",
-        template: "\n  <div class=\"row\">\n    <div class=\"col-xs-6\">\n      <select (change)=\"onChange($event.target.value)\" class=\"form-control\">\n        <option value = \"All\" selected=\"selected\">Show All Food</option>\n        <option value = \"high calorie\">High Calorie Foods</option>\n        <option value = \"high fat\">High Fat Foods</option>\n        <option value = \"high carbs\">High Carb Foods</option>\n        <option value = \"low protein\">Low Protein Foods</option>\n      </select>\n    </div>\n    <div *ngIf=\"childFoodList.length<=0\" class=\"col-xs-3\"><button (click)=\"getFood()\" class=\"btn form-control\">Get Food</button></div>\n    <div *ngIf=\"!childFoodList.length<=0\" class=\"col-xs-3\"><button (click)=\"saveFood()\" class=\"btn form-control\">Save Food</button></div>\n  </div>\n  <div *ngFor=\"let currentFood of childFoodList | badfood: badFoodSelection \" >\n    <h4 (click)=\"selectFood(currentFood)\" >\n      {{ currentFood.food }}\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      ({{ currentFood.calories }} calories)</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      ({{ currentFood.calories }} calories)</span>\n      {{ currentFood.datetime | date:'longDate' }}\n      @ {{ currentFood.datetime | date:'shortTime' }}\n    </h4>\n    <p>\n      Protein: {{ currentFood.protein }}g,\n      Carbohydrates: {{ currentFood.carbs }}g,\n      Fat: {{ currentFood.fat }}g\n\n      <span *ngIf=\"currentFood.problemData()\" class=\"warning\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n      <span *ngIf=\"!currentFood.problemData()\">\n      (Calculated calories: {{ currentFood.calculatedCalories() }})</span>\n    </p>\n    <p><strong>Comments: </strong> {{ currentFood.comments }}</p>\n  </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], ShowFoodComponent);
 exports.ShowFoodComponent = ShowFoodComponent;
 //# sourceMappingURL=food-list.component.js.map

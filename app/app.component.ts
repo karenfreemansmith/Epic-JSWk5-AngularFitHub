@@ -21,11 +21,20 @@ import { Activity } from './activity.model';
       </div>
       <div *ngIf="this.selectedView==='activity'" class="row">
         <div class="col-sm-7">
-          <show-activity></show-activity>
+          <show-activity
+            [childActivityList] = "parentActivityList"
+            (clickedActivity) = "showActivity($event)"
+          ></show-activity>
         </div>
         <div class="col-sm-4 col-sm-offset-1">
-          <add-activity></add-activity>
-          <edit-activity></edit-activity>
+          <add-activity
+            [childSelectedActivity] = "selectedActivity"
+            (addActivitySender) = "addActivity($event)"
+          ></add-activity>
+          <edit-activity
+            [childSelectedActivity] = "selectedActivity"
+            (editActivitySender)="activityEditDone()"
+          ></edit-activity>
         </div>
       </div>
       <div *ngIf="this.selectedView==='food'" class="row">
@@ -75,10 +84,12 @@ export class AppComponent {
     new Meal("Lunch"),
     new Meal("Supper")
   ];
+  public parentActivityList: Activity[] = [];
 
   selectedView: string = "meals";
   selectedFood: Food = null;
   selectedMeal: Meal = null;
+  selectedActivity: Activity = null;
 
   addFood(newFoodFromChild: Food) {
     this.parentFoodList.push(newFoodFromChild);
@@ -97,6 +108,16 @@ export class AppComponent {
   }
   mealEditDone() {
     this.selectedMeal = null;
+  }
+  addActivity(newActivityFromChild: Activity) {
+    this.parentActivityList.push(newActivityFromChild);
+  }
+  showActivity(clickedActivity) {
+  console.log(clickedActivity);
+    this.selectedActivity = clickedActivity;
+  }
+  activityEditDone() {
+    this.selectedActivity = null;
   }
   activityView() {
     this.selectedView = "activity";

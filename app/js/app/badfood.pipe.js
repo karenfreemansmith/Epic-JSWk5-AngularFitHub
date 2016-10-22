@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var BadFoodPipe = (function () {
     function BadFoodPipe() {
     }
@@ -50,14 +50,14 @@ var BadFoodPipe = (function () {
             return input;
         }
     };
+    BadFoodPipe = __decorate([
+        core_1.Pipe({
+            name: "badfood",
+            pure: false
+        }), 
+        __metadata('design:paramtypes', [])
+    ], BadFoodPipe);
     return BadFoodPipe;
 }());
-BadFoodPipe = __decorate([
-    core_1.Pipe({
-        name: "badfood",
-        pure: false
-    }),
-    __metadata("design:paramtypes", [])
-], BadFoodPipe);
 exports.BadFoodPipe = BadFoodPipe;
 //# sourceMappingURL=badfood.pipe.js.map

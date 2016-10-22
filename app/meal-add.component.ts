@@ -11,7 +11,10 @@ import { Meal } from './meal.model';
       <input #newMeal class="form-control">
     </div>
     <div class="form-group col-xs-12">
-    <button (click)="addClicked(newMeal.value)" class="btn form-control">Add Meal</button>
+    <button (click)="
+      addClicked(newMeal.value);
+      newMeal.value='';
+    " class="btn form-control">Add Meal</button>
     </div>
   </div>
   `

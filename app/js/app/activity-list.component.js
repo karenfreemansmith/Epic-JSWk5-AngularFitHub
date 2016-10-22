@@ -8,30 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var ShowActivityComponent = (function () {
     function ShowActivityComponent() {
         this.clickedActivity = new core_1.EventEmitter();
     }
-    ShowActivityComponent.prototype.selectActivity = function (activityToEdit) {
+    ShowActivityComponent.prototype.selectedActivity = function (activityToEdit) {
+        console.log(activityToEdit);
         this.clickedActivity.emit(activityToEdit);
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], ShowActivityComponent.prototype, "childActivityList", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ShowActivityComponent.prototype, "clickedActivity", void 0);
+    ShowActivityComponent = __decorate([
+        core_1.Component({
+            selector: "show-activity",
+            template: "\n  <div *ngFor=\"let currentActivity of childActivityList\">\n    <h3  (click)=\"selectedActivity(currentActivity)\">{{ currentActivity.duration }} minutes of {{ currentActivity.description }}</h3>\n    <p>{{currentActivity.datetime | date:'longDate'}}</p>\n  </div>\n  "
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ShowActivityComponent);
     return ShowActivityComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Array)
-], ShowActivityComponent.prototype, "childActivityList", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", Object)
-], ShowActivityComponent.prototype, "clickedActivity", void 0);
-ShowActivityComponent = __decorate([
-    core_1.Component({
-        selector: "show-activity",
-        template: "\n  <div *ngFor=\"let currentActivity of childActivityList\" >\n    <h4 (click)=\"selectActivity(currentActivity)\" >{{ currentActivity.duration }} minutes of {{ currentActivity.description }}</h4>\n    <p><strong>{{currentActivity.datetime}}</strong></p>\n  </div>\n  "
-    }),
-    __metadata("design:paramtypes", [])
-], ShowActivityComponent);
 exports.ShowActivityComponent = ShowActivityComponent;
 //# sourceMappingURL=activity-list.component.js.map
