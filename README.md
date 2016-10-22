@@ -8,19 +8,17 @@ Version 0.0.0: October 21, 2016
 Epicodus JavaScript Week 2 Individual Project.
 
 ### Specifications
-#### User Stories:
-* I want to log a food I have eaten by submitting a form with food name, calories and details.
-  (is there a calorie counter API I could use to get this info?)
-* I want to view a list of foods I have logged.
-* I want options to view all foods, only high-calorie foods (more than 500 calories), or only lower-calorie foods (less than 500 calories).
-  (pipe, also wonder about displaying nutrition graphs/pie char?)
-* I want to click a food to edit its name, details or calories (in case I decide to pretend my fries were 100 calories instead of 365).
-(Further Exploration)
-* Custom SASS styling with corresponding Gulp tasks to compile.
-* Display of the total number of calories consumed in a day, and/or the average number of calories consumed in a day.
-* Add a property that records when each food was eaten. The user could enter a date and time, or the app can generate a timestamp.
-* Expand the application to display multiple days of food logs. Group the food entries by day. Then include a component to display the total calories for whichever day the user selects.
-* Add a new master component to average the total calories consumed per day so that the user can figure out how much exercise they should be getting on a regular basis.
+* Add food by submitting a form with food name, calories and details.
+* View a list of foods I have logged. *(Optionally, can display a list of pre-entered food by clicking a button - to test filters)*
+* Select filter to view
+  * all foods, high-calorie foods (more than 500 calories)
+  * high-carb foods (more than 70% carbs)
+  * high-fat foods (more than 30% fat)
+  * low-protien foods (less than 10% protein).
+* Click a food to edit its name, details or calories.
+* Highlights calories if the macro nutrients and calories don't add up close to the same.
+* Styles Sass compiled with Gulp tasks.
+* Shows date and time when food was entered.
 
 ## Setup/Installation
 * npm install
@@ -31,8 +29,19 @@ Epicodus JavaScript Week 2 Individual Project.
 ## Support & Contact
 For questions, concerns, or suggestions please email karenfreemansmith@gmail.com
 
-## Known Issues
-* None yet
+## Known Issues (*Desired Improvements*)
+* Add foods to a "meal"
+* Display total calories and percentage fat/carbs/protein by meal
+* Edit date and time of meal.
+* Filter meals by day and show daily total calories and macro-nutrient percentages.
+* Show average calories and macro-nutrients for date range
+* Add activity log
+* Set goals (minutes of activity, max/min calories per day, etc)
+* Display daily progress in chart (like one on GitHub) to see progress/effort at a glance.
+* Add results tracking (weight/inches):
+  * Add new "check-in"
+  * Display chart of all checkins for date range
+* Use local storage to persist data on device.
 
 ## Technologies Used
 TypeScript, Angular2, Sass, Gulp, Bower
