@@ -11,11 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ShowActivityComponent = (function () {
     function ShowActivityComponent() {
+        this.clickedActivity = new core_1.EventEmitter();
     }
+    ShowActivityComponent.prototype.selectActivity = function (activityToEdit) {
+        this.clickedActivity.emit(activityToEdit);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], ShowActivityComponent.prototype, "childActivityList", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ShowActivityComponent.prototype, "clickedActivity", void 0);
     ShowActivityComponent = __decorate([
         core_1.Component({
             selector: "show-activity",
-            template: "\n    <div>List Activities</div>\n  "
+            template: "\n  <div *ngFor=\"let currentActivity of childActivityList\" >\n    <h4 (click)=\"selectActivity(currentActivity)\" >{{ currentActivity.duration }} minutes of {{ currentActivity.description }}</h4>\n    <p><strong>{{currentActivity.datetime}}</strong></p>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], ShowActivityComponent);

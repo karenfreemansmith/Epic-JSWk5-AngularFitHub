@@ -30,7 +30,7 @@ __decorate([
 EditMealComponent = __decorate([
     core_1.Component({
         selector: "edit-meal",
-        template: "\n  <div *ngIf=\"childSelectedMeal\" class=\"row\">\n    <h3>Edit {{childSelectedMeal.description}} from {{childSelectedMeal.datetime | date}}:</h3>\n    <div class=\"form-group col-xs-12\">\n      <label>Meal Description: </label>\n      <input [(ngModel)]=\"childSelectedMeal.description\" class=\"form-control\">\n    </div>\n\n    <div class=\"form-group col-xs-12\">\n    <button (click)=\"updateClicked()\" class=\"btn form-control\">Done Editing</button>\n    </div>\n  </div>\n  "
+        template: "\n  <div *ngIf=\"childSelectedMeal\" class=\"row\">\n    <h3>Editing: {{childSelectedMeal.description}}</h3>\n    <h4>{{childSelectedMeal.datetime | date}}:</h4>\n    <div class=\"form-group col-xs-12\">\n      <label>Meal Description: </label>\n      <input [(ngModel)]=\"childSelectedMeal.description\" class=\"form-control\">\n    </div>\n\n    <div class=\"form-group col-xs-12\">\n    <button (click)=\"updateClicked()\" class=\"btn form-control\">Done Editing</button>\n    </div>\n  </div>\n  "
     }),
     __metadata("design:paramtypes", [])
 ], EditMealComponent);

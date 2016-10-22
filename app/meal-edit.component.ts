@@ -5,7 +5,8 @@ import { Meal } from './meal.model';
   selector: "edit-meal",
   template:`
   <div *ngIf="childSelectedMeal" class="row">
-    <h3>Edit {{childSelectedMeal.description}} from {{childSelectedMeal.datetime | date}}:</h3>
+    <h3>Editing: {{childSelectedMeal.description}}</h3>
+    <h4>{{childSelectedMeal.datetime | date}}:</h4>
     <div class="form-group col-xs-12">
       <label>Meal Description: </label>
       <input [(ngModel)]="childSelectedMeal.description" class="form-control">
