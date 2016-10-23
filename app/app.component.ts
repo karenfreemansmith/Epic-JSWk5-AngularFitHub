@@ -42,6 +42,7 @@ import { Activity } from './activity.model';
           <show-food
             [childFoodList] = "parentFoodList"
             (clickedFood) = "showFood($event)"
+            (foodList) = "getFood($event)"
           ></show-food>
         </div>
         <div class="col-sm-4 col-sm-offset-1">
@@ -94,11 +95,17 @@ export class AppComponent {
   addFood(newFoodFromChild: Food) {
     this.parentFoodList.push(newFoodFromChild);
   }
-  showFood(clickedFood) {
+  showFood(clickedFood: Food) {
     this.selectedFood = clickedFood;
   }
   foodEditDone() {
     this.selectedFood = null;
+  }
+  getFood(foodList: Food[]) {
+    foodList.forEach(function(food: Food) {
+      addFood(food);
+    });
+    console.log(this.parentFoodList);
   }
   addMeal(newMealFromChild: Meal) {
     this.parentMealList.push(newMealFromChild);

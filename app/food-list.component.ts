@@ -45,6 +45,7 @@ import { Food } from './food.model';
 export class ShowFoodComponent {
   @Input() childFoodList: Food[];
   @Output() clickedFood = new EventEmitter();
+  @Output() foodList = new EventEmitter();
 
   public badFoodSelection: string = "All";
   onChange(optionFromMenu) {
@@ -997,27 +998,29 @@ export class ShowFoodComponent {
     this.childFoodList.push(new Food("WHITE BREAD; TOASTED 22 PER 1 SLICE	55	2	1	10));
     this.childFoodList.push(new Food("WHITE CAKE W/ WHT FRSTNG;COMML1 CAKE	4170	43	148	670));
     this.childFoodList.push(new Food("WHITE CAKE W/ WHT FRSTNG;COMML1 PIECE	260	3	9	42));
-    this.childFoodList.push(new Food("WHITE SAUCE W/ MILK FROM MIX 1 CUP	240	10	13	21));
-    this.childFoodList.push(new Food("WHITE SAUCE; MEDIUM; HOME RECP1 CUP	395	10	30	24));
-    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD 1 LOAF	1110	44	20	206));
-    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD 1 SLICE	70	3	1	13));
-    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD; TOASTED 1 SLICE	70	3	1	13));
-    this.childFoodList.push(new Food("WHOLE-WHEAT FLOUR;HRD WHT;STIR1 CUP	400	16	2	85));
-    this.childFoodList.push(new Food("WHOLE-WHEAT WAFERS; CRACKERS 2 CRACKR	35	1	2	5));
-    this.childFoodList.push(new Food("WINE; DESSERT 3.5 F OZ	140	0	0	8));
-    this.childFoodList.push(new Food("WINE; TABLE; RED 3.5 F OZ	75	0	0	3));
-    this.childFoodList.push(new Food("WINE; TABLE; WHITE 3.5 F OZ	80	0	0	3));
-    this.childFoodList.push(new Food("YEAST; BAKERS; DRY; ACTIVE 1 PKG	20	3	0	3));
-    this.childFoodList.push(new Food("YEAST; BREWERS; DRY 1 TBSP	25	3	0	3));
-    this.childFoodList.push(new Food("YELLOW CAKE W/ CHOC FRST;FRMIX1 CAKE	3735	45	125	638));
-    this.childFoodList.push(new Food("YELLOW CAKE W/ CHOC FRST;FRMIX1 PIECE	235	3	8	40));
-    this.childFoodList.push(new Food("YELLOWCAKE W/ CHOCFRSTNG;COMML1 CAKE	3895	40	175	620));
-    this.childFoodList.push(new Food("YELLOWCAKE W/ CHOCFRSTNG;COMML1 PIECE	245	2	11	39));
-    this.childFoodList.push(new Food("YOGURT; W/ LOFAT MILK; PLAIN 8 OZ	145	12	4	16));
-    this.childFoodList.push(new Food("YOGURT; W/ LOFAT MILK;FRUITFLV8 OZ	230	10	2	43));
-    this.childFoodList.push(new Food("YOGURT; W/ NONFAT MILK 8 OZ	125	13	0	17));
-    this.childFoodList.push(new Food("YOGURT; W/ WHOLE MILK 8 OZ	140	8	7	11));
-    */
+*/
+    this.childFoodList.push(new Food("WHITE SAUCE W/ MILK FROM MIX 1 CUP", 240,	10,	13,	21));
+    this.childFoodList.push(new Food("WHITE SAUCE; MEDIUM; HOME RECP1 CUP", 395,	10,	30,	24));
+    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD 1 LOAF", 1110,	44,	20,	206));
+    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD 1 SLICE", 70,	3,	1,	13));
+    this.childFoodList.push(new Food("WHOLE-WHEAT BREAD; TOASTED 1 SLICE", 70,	3,	1,	13));
+    this.childFoodList.push(new Food("WHOLE-WHEAT FLOUR;HRD WHT;STIR1 CUP", 400,	16,	2,	85));
+    this.childFoodList.push(new Food("WHOLE-WHEAT WAFERS; CRACKERS 2 CRACKR", 35,	1,	2,	5));
+    this.childFoodList.push(new Food("WINE; DESSERT 3.5 F OZ", 140,	0,	0,	8));
+    this.childFoodList.push(new Food("WINE; TABLE; RED 3.5 F OZ", 75,	0,	0,	3));
+    this.childFoodList.push(new Food("WINE; TABLE; WHITE 3.5 F OZ", 80,	0,	0,	3));
+    this.childFoodList.push(new Food("YEAST; BAKERS; DRY; ACTIVE 1 PKG", 20,	3,	0,	3));
+    this.childFoodList.push(new Food("YEAST; BREWERS; DRY 1 TBSP", 25,	3,	0,	3));
+    this.childFoodList.push(new Food("YELLOW CAKE W/ CHOC FRST;FRMIX1 CAKE", 3735,	45,	125,	638));
+    this.childFoodList.push(new Food("YELLOW CAKE W/ CHOC FRST;FRMIX1 PIECE", 235,	3,	8,	40));
+    this.childFoodList.push(new Food("YELLOWCAKE W/ CHOCFRSTNG;COMML1 CAKE", 3895,	40,	175,	620));
+    this.childFoodList.push(new Food("YELLOWCAKE W/ CHOCFRSTNG;COMML1 PIECE", 245,	2,	11,	39));
+    this.childFoodList.push(new Food("YOGURT; W/ LOFAT MILK; PLAIN 8 OZ", 145,	12,	4,	16));
+    this.childFoodList.push(new Food("YOGURT; W/ LOFAT MILK;FRUITFLV8 OZ", 230,	10,	2, 43));
+    this.childFoodList.push(new Food("YOGURT; W/ NONFAT MILK 8 OZ", 125,	13,	0,	17));
+    this.childFoodList.push(new Food("YOGURT; W/ WHOLE MILK 8 OZ", 140,	8,	7,	11))
     this.childFoodList.push(new Food("ZUCHINI; 1/2 CUP", 16, 1,	0, 3));
+
+    this.foodList.emit(this.childFoodList);
   }
 }

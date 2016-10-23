@@ -1,7 +1,7 @@
 import { Food } from './food.model';
 
 export class Meal {
-  public datetime: number = new Date();
+  public datetime: Date = new Date();
   public foodlist: Food[] = [];
   public calories: number;
   public protein: number;
