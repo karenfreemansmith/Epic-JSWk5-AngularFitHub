@@ -21,6 +21,7 @@ var meal_list_component_1 = require('./meal-list.component');
 var activity_add_component_1 = require('./activity-add.component');
 var activity_edit_component_1 = require('./activity-edit.component');
 var activity_list_component_1 = require('./activity-list.component');
+var show_progress_component_1 = require('./show-progress.component');
 var badfood_pipe_1 = require('./badfood.pipe');
 var AppModule = (function () {
     function AppModule() {
@@ -42,6 +43,7 @@ var AppModule = (function () {
                 activity_add_component_1.AddActivityComponent,
                 activity_edit_component_1.EditActivityComponent,
                 activity_list_component_1.ShowActivityComponent,
+                show_progress_component_1.ShowProgressComponent,
                 badfood_pipe_1.BadFoodPipe
             ],
             bootstrap: [app_component_1.AppComponent]

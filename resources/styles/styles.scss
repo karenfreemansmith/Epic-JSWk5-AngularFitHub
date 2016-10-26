@@ -20,6 +20,16 @@ img.logo {
   width: $smpic;
 }
 
+.rank {
+  height:9px;
+  width:9px;
+  background-color: midnightblue;
+  opacity: .3;
+  border: solid black 1px;
+  float:left;
+  margin: 0 1px 0 0;
+}
+
 .warning {
   background: yellow;
   color: red;

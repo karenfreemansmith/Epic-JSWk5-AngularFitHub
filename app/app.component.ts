@@ -19,6 +19,16 @@ import { Activity } from './activity.model';
           <button (click)="mealView()" class="btn form-control">Meals</button>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Exercise</h3>
+          <show-progress></show-progress>
+        </div>
+        <div class="col-sm-6">
+          <h3>Diet</h3>
+          <show-progress></show-progress>
+        </div>
+      </div>
       <div *ngIf="this.selectedView==='activity'" class="row">
         <div class="col-sm-7">
           <show-activity
@@ -103,7 +113,7 @@ export class AppComponent {
   }
   getFood(foodList: Food[]) {
     foodList.forEach(function(food: Food) {
-      addFood(food);
+      //addFood(food);
     });
     console.log(this.parentFoodList);
   }

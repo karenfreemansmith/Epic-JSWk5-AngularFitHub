@@ -11,6 +11,7 @@ import { ShowMealComponent } from './meal-list.component';
 import { AddActivityComponent }  from './activity-add.component';
 import { EditActivityComponent } from './activity-edit.component';
 import { ShowActivityComponent } from './activity-list.component';
+import { ShowProgressComponent } from './show-progress.component';
 import { BadFoodPipe } from './badfood.pipe';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { BadFoodPipe } from './badfood.pipe';
     AddActivityComponent,
     EditActivityComponent,
     ShowActivityComponent,
+    ShowProgressComponent,
     BadFoodPipe
    ],
   bootstrap:    [ AppComponent ]
