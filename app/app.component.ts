@@ -7,7 +7,7 @@ import { Activity } from './activity.model';
   selector: 'my-app',
   template: `
     <div class="container">
-      <h1><img src="build/images/logo.png" class="logo">Epic Health Tracker</h1>
+      <h1><img src="build/images/words.png" class="logo">FitHub</h1>
       <div class="row">
         <div class="col-xs-4">
           <button (click)="activityView()" class="btn form-control">Activity</button>

@@ -1,24 +1,44 @@
 # EpicJSWk2-HealthTracker
 ![screenshot of project running](screenshot.png)
 
-by [Karen Freeman-Smith](https://github.com/karenfreemansmith)
-Version 0.0.0: October 21, 2016
+Version 0.1.0: 10, 2016
 
 ## Description
-Epicodus JavaScript Week 2 Individual Project.
+Epicodus JavaScript Week 5 Group Project by
+* [Alexander Jacks](https://github.com/Adjectival)
+* [Dean Sceleza](https://github.com/d34n5)
+* [Garrett Price](https://github.com/GarrettLeePrice)
+* [Karen Freeman-Smith](https://github.com/karenfreemansmith)
+
+An application to track progress on your health and fitness goals written with TypeScript, Sass, Angular 2, and Firebase
 
 ### Specifications
-* Add food by submitting a form with food name, calories and details.
-* View a list of foods I have logged. *(Optionally, can display a list of pre-entered food by clicking a button - to test filters)*
-* Select filter to view
-  * all foods, high-calorie foods (more than 500 calories)
-  * high-carb foods (more than 70% carbs)
-  * high-fat foods (more than 30% fat)
-  * low-protien foods (less than 10% protein).
-* Click a food to edit its name, details or calories.
-* Highlights calories if the macro nutrients and calories don't add up close to the same.
-* Styles Sass compiled with Gulp tasks.
-* Shows date and time when food was entered.
+* Enter Foods:
+  * Add or edit foods on the list to keep track of their nutritional qualities like calories, fat, carbs, protein (with the possibility of adding more nutritional data)
+  * Allow user to look up foods from an API or enter them by hand.
+  * Foods get an icon based on the category of the food
+* Enter Meals:
+  * Add or edit timestamp for meal
+  * Add foods to a meal (with adjustable portion sizes to calculate their actual values)
+  * Show a summary (possibly a graph) of nutrition by meal, day, week, etc.
+* Set Diet Goals:
+  * Set a target goal for daily diet (in calories/fat/carbs/protein etc)
+* Enter Activities:
+  * Add or edit activity goals
+  * Record completed activites with percentage of goal reached
+* Display daily progress with various colored squares for the past year
+  * 5 colors (shown as opacity): ... all effort gets some reward, extra effort gets extra reward.
+  * 10% opacity = ANY effort
+  * 30% opacity = 33% effort (? should this be more, 50% maybe?)
+  * 50% opacity = 67% effort (? if other is 50% should this be 75%, 90%?)
+  * 70% opacity = 100% effort
+  * 90% opacity > 100% effort
+* Store data:
+  * in local storage (if database is not possible)
+  * or, preferably in database with user login
+* (Optional...) Add results tracking (weight/inches):
+  * Add new "check-in"
+  * Display chart of all checkins for date range
 
 ## Setup/Installation
 * npm install
@@ -30,18 +50,7 @@ Epicodus JavaScript Week 2 Individual Project.
 For questions, concerns, or suggestions please email karenfreemansmith@gmail.com
 
 ## Known Issues (*Desired Improvements*)
-* Add foods to a "meal"
-* Display total calories and percentage fat/carbs/protein by meal
-* Edit date and time of meal.
-* Filter meals by day and show daily total calories and macro-nutrient percentages.
-* Show average calories and macro-nutrients for date range
-* Add activity log
-* Set goals (minutes of activity, max/min calories per day, etc)
-* Display daily progress in chart (like one on GitHub) to see progress/effort at a glance.
-* Add results tracking (weight/inches):
-  * Add new "check-in"
-  * Display chart of all checkins for date range
-* Use local storage to persist data on device.
+*
 
 ## Technologies Used
 TypeScript, Angular2, Sass, Gulp, Bower
@@ -49,4 +58,4 @@ TypeScript, Angular2, Sass, Gulp, Bower
 ## Legal
 *Licensed under the GNU General Public License v3.0*
 
-Copyright (c) 2016 Copyright _Karen Freeman-Smith_ All Rights Reserved.
+Copyright (c) 2016 Copyright _[Alexander Jacks](https://github.com/Adjectival), [Dean Sceleza](https://github.com/d34n5), [Garrett Price](https://github.com/GarrettLeePrice), [Karen Freeman-Smith](https://github.com/karenfreemansmith)_ All Rights Reserved.

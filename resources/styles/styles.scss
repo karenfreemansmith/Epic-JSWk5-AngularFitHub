@@ -1,40 +1,10 @@
-$offwhite: #f9f4ea;
-$bronze: #8e7245;
-$orange: #e2a43f;
-$dance: 'Dancing Script', cursive;
-$smpic: 128px;
-$lgfont: 5em;
-
-body {
-  background: $offwhite;
+img {
+  width: 180px;
 }
-
-h1 {
-  color: $bronze;
-  font-size: $lgfont;
-  font-family: $dance;
-  text-align: center;
-}
-
-img.logo {
-  width: $smpic;
-}
-
 .rank {
-  height:9px;
-  width:9px;
-  background-color: midnightblue;
-  opacity: .3;
-  border: solid black 1px;
-  float:left;
-  margin: 0 1px 0 0;
-}
-
-.warning {
-  background: yellow;
-  color: red;
-}
-
-.row {
-  margin-bottom: 20px;
+  background: green;
+  width: 8px;
+  height: 8px;
+  float: left;
+  margin-right: 1px;
 }
